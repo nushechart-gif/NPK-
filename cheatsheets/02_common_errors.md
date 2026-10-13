@@ -1,7 +1,7 @@
 # 🚨 Шпаргалка: Частые ошибки и как их исправить
 
 ## 1. `IndentationError: expected an indented block`
-
+https://i.pinimg.com/1200x/05/2d/3a/052d3a5bd35bbb65151fd95a3e41e34c.jpg
 **Что значит:** После `:` ты забыл поставить отступ.
 
 **Было:**
