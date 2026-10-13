@@ -1,5 +1,5 @@
 # 📐 Шпаргалка: Табуляция и отступы
-<img width="844" height="844" alt="image" src="https://github.com/user-attachments/assets/a06f1c11-9f87-4b1a-8025-e2156eeb7d52" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/a06f1c11-9f87-4b1a-8025-e2156eeb7d52" />
 
 ## 🎯 Главное правило
 
