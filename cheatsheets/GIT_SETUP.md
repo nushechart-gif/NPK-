@@ -1,5 +1,8 @@
 # 🛠 Полный гайд по Git и VS Code для Python-разработчиков
-<img width="571" height="1024" alt="image" src="https://github.com/user-attachments/assets/3bbea7bb-c490-40b6-a5a7-5d3d64f98207" />
+<div align="center">
+<img width="571" height="1024" alt="image" src="https://github.com/user-attachments/assets/3bbea7bb-c490-40b6-a5a7-5d3d64f98207"  />
+   
+</div>
 
 > Эта памятка проведёт вас от чистой установки до уверенной ежедневной работы с Git. Каждый шаг объяснён: **что делаем**, **как делаем** и **почему именно так**.
 
