@@ -1,8 +1,15 @@
 # 🚨 Шпаргалка: Частые ошибки и как их исправить
 
 ## 1. `IndentationError: expected an indented block`
-https://i.pinimg.com/1200x/05/2d/3a/052d3a5bd35bbb65151fd95a3e41e34c.jpg
-**Что значит:** После `:` ты забыл поставить отступ.
+<div>
+<div align="left">
+<b>Что значит:</b> После <code>:</code> ты забыл поставить отступ.
+</div>
+<div align="right">
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/1b358e2f-9c11-48c2-92a8-87381af67076" float="right" />
+</div>
+</div>
+
 
 **Было:**
 ```python
