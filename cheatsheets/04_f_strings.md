@@ -1,4 +1,5 @@
 # 📝 Шпаргалка: F-строки (f-strings)
+<img width="35%" alt="image" src="https://github.com/user-attachments/assets/04e21d8d-e425-4b3c-9b95-c0801a8e7f1e" />
 
 ## 🎯 Что такое f-строки
 
