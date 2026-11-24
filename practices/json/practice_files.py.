@@ -1,0 +1,378 @@
+"""
+ПРАКТИЧЕСКАЯ РАБОТА: Работа с файлами в Python
+
+Тема:
+- открытие и закрытие файлов;
+- чтение и запись текстовых данных;
+- режимы доступа r, w, a;
+- обработка строк и списков через файлы.
+
+Формат работы:
+1. Запустите файл:
+   python practice_files.py
+
+2. Вы увидите список проверок:
+   [OK]    — задание выполнено правильно;
+   [FAIL]  — программа работает, но результат неверный;
+   [ERROR] — программа упала с ошибкой.
+
+3. Исправляйте ТОЛЬКО функции в разделе "КОД ДЛЯ ИСПРАВЛЕНИЯ".
+4. Тесты ниже менять нельзя.
+5. После каждого исправления снова запускайте файл.
+
+Правила работы с файлами:
+- Всегда используйте конструкцию with.
+- Всегда указывайте encoding="utf-8".
+- Режим "w" очищает файл перед записью.
+- Режим "a" дописывает данные в конец файла.
+- Метод write() принимает только строки.
+"""
+
+import os
+
+
+# ============================================================
+# КОД ДЛЯ ИСПРАВЛЕНИЯ
+# ============================================================
+
+# ------------------------------------------------------------
+# Задание 1. Запись строки в файл
+# ------------------------------------------------------------
+# Функция должна создать файл с указанным именем и записать
+# в него переданную строку.
+#
+# Ожидаемый результат:
+# после save_text("test.txt", "hello")
+# в файле test.txt должен быть текст "hello"
+
+def save_text(filename, text):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 2. Чтение строки из файла
+# ------------------------------------------------------------
+# Функция должна прочитать содержимое файла и вернуть его
+# как строку.
+#
+# Ожидаемый результат:
+# если в файле "test.txt" лежит "hello",
+# то load_text("test.txt") -> "hello"
+
+def load_text(filename):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 3. Запись списка предметов в файл
+# ------------------------------------------------------------
+# Функция должна сохранить список предметов в файл.
+# Каждый предмет должен быть записан с новой строки.
+#
+# Ожидаемый результат:
+# после save_inventory("inv.txt", ["меч", "зелье", "щит"])
+# в файле inv.txt должно быть:
+# меч
+# зелье
+# щит
+
+def save_inventory(filename, inventory):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 4. Чтение списка предметов из файла
+# ------------------------------------------------------------
+# Функция должна прочитать файл и вернуть список предметов.
+# Каждая строка файла — один предмет.
+# Пустые строки нужно игнорировать.
+#
+# Ожидаемый результат:
+# load_inventory("inv.txt") -> ["меч", "зелье", "щит"]
+
+def load_inventory(filename):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 5. Подсчёт строк в файле
+# ------------------------------------------------------------
+# Функция должна вернуть количество строк в файле.
+#
+# Ожидаемый результат:
+# если в файле 3 строки, то count_lines("file.txt") -> 3
+
+def count_lines(filename):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 6. Добавление строки в конец файла
+# ------------------------------------------------------------
+# Функция должна дописать строку в конец файла, не удаляя
+# старое содержимое. После строки должен быть перенос строки.
+#
+# Ожидаемый результат:
+# если в файле было "меч\n",
+# после append_line("inv.txt", "зелье")
+# в файле должно быть "меч\nзелье\n"
+
+def append_line(filename, line):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 7. Сохранение словаря характеристик игрока
+# ------------------------------------------------------------
+# Функция должна сохранить словарь в файл.
+# Каждая пара ключ-значение — на отдельной строке в формате:
+# ключ=значение
+#
+# Ожидаемый результат:
+# после save_stats("stats.txt", {"hp": 100, "gold": 50})
+# в файле stats.txt должно быть:
+# hp=100
+# gold=50
+
+def save_stats(filename, stats):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 8. Загрузка словаря характеристик игрока
+# ------------------------------------------------------------
+# Функция должна прочитать файл и вернуть словарь.
+# Каждая строка файла имеет формат "ключ=значение".
+# Значения нужно преобразовать в числа (int).
+#
+# Ожидаемый результат:
+# load_stats("stats.txt") -> {"hp": 100, "gold": 50}
+
+def load_stats(filename):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 9. Копирование файла
+# ------------------------------------------------------------
+# Функция должна прочитать содержимое исходного файла
+# и записать его в новый файл.
+#
+# Ожидаемый результат:
+# после copy_file("source.txt", "copy.txt")
+# содержимое copy.txt должно совпадать с source.txt
+
+def copy_file(source, destination):
+    pass
+
+
+# ------------------------------------------------------------
+# Задание 10. Поиск самого длинного слова в файле
+# ------------------------------------------------------------
+# Функция должна прочитать файл, разбить его содержимое
+# на слова и вернуть самое длинное слово.
+# Слова разделены пробелами. Если слов несколько одинаковой
+# максимальной длины — вернуть первое из них.
+# Если файл пустой — вернуть пустую строку.
+#
+# Ожидаемый результат:
+# если в файле "hello brave new world",
+# то longest_word("file.txt") -> "brave"
+# если файл пустой, то longest_word("file.txt") -> ""
+
+def longest_word(filename):
+    pass
+
+
+# ============================================================
+# ТЕСТЫ. ЭТОТ РАЗДЕЛ НЕ МЕНЯТЬ.
+# ============================================================
+
+def cleanup(filename):
+    """Удаляет файл, если он существует."""
+    if os.path.exists(filename):
+        os.remove(filename)
+
+
+def test_save_text():
+    filename = "tmp_save_text.txt"
+    try:
+        cleanup(filename)
+        save_text(filename, "привет, мир")
+        with open(filename, "r", encoding="utf-8") as f:
+            result = f.read()
+        return result
+    finally:
+        cleanup(filename)
+
+
+def test_load_text():
+    filename = "tmp_load_text.txt"
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("тестовая строка")
+        return load_text(filename)
+    finally:
+        cleanup(filename)
+
+
+def test_save_inventory():
+    filename = "tmp_save_inv.txt"
+    try:
+        cleanup(filename)
+        save_inventory(filename, ["меч", "зелье", "щит"])
+        with open(filename, "r", encoding="utf-8") as f:
+            content = f.read()
+        return content
+    finally:
+        cleanup(filename)
+
+
+def test_load_inventory():
+    filename = "tmp_load_inv.txt"
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("меч\nзелье\nщит\n")
+        return load_inventory(filename)
+    finally:
+        cleanup(filename)
+
+
+def test_count_lines():
+    filename = "tmp_count.txt"
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("первая\nвторая\nтретья\n")
+        return count_lines(filename)
+    finally:
+        cleanup(filename)
+
+
+def test_append_line():
+    filename = "tmp_append.txt"
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("меч\n")
+        append_line(filename, "зелье")
+        with open(filename, "r", encoding="utf-8") as f:
+            return f.read()
+    finally:
+        cleanup(filename)
+
+
+def test_save_stats():
+    filename = "tmp_save_stats.txt"
+    try:
+        cleanup(filename)
+        save_stats(filename, {"hp": 100, "gold": 50})
+        with open(filename, "r", encoding="utf-8") as f:
+            content = f.read()
+        return content
+    finally:
+        cleanup(filename)
+
+
+def test_load_stats():
+    filename = "tmp_load_stats.txt"
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("hp=100\ngold=50\n")
+        return load_stats(filename)
+    finally:
+        cleanup(filename)
+
+
+def test_copy_file():
+    source = "tmp_source.txt"
+    destination = "tmp_copy.txt"
+    try:
+        with open(source, "w", encoding="utf-8") as f:
+            f.write("содержимое для копирования\n")
+        cleanup(destination)
+        copy_file(source, destination)
+        with open(destination, "r", encoding="utf-8") as f:
+            return f.read()
+    finally:
+        cleanup(source)
+        cleanup(destination)
+
+
+def test_longest_word():
+    filename = "tmp_longest.txt"
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("hello brave new world")
+        return longest_word(filename)
+    finally:
+        cleanup(filename)
+
+
+def test_longest_word_empty():
+    filename = "tmp_longest_empty.txt"
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("")
+        return longest_word(filename)
+    finally:
+        cleanup(filename)
+
+
+TESTS = [
+    ("01. save_text", test_save_text, "привет, мир"),
+    ("02. load_text", test_load_text, "тестовая строка"),
+    ("03. save_inventory", test_save_inventory, "меч\nзелье\nщит\n"),
+    ("04. load_inventory", test_load_inventory, ["меч", "зелье", "щит"]),
+    ("05. count_lines", test_count_lines, 3),
+    ("06. append_line", test_append_line, "меч\nзелье\n"),
+    ("07. save_stats", test_save_stats, "hp=100\ngold=50\n"),
+    ("08. load_stats", test_load_stats, {"hp": 100, "gold": 50}),
+    ("09. copy_file", test_copy_file, "содержимое для копирования\n"),
+    ("10. longest_word", test_longest_word, "brave"),
+    ("11. longest_word empty", test_longest_word_empty, ""),
+]
+
+
+def run_tests():
+    print("=" * 60)
+    print("ПРАКТИКА: РАБОТА С ФАЙЛАМИ")
+    print("=" * 60)
+    print()
+
+    passed = 0
+    failed = 0
+    errors = 0
+
+    for name, test_function, expected in TESTS:
+        try:
+            result = test_function()
+
+            if result == expected:
+                print(f"[OK]    {name}")
+                passed += 1
+            else:
+                print(f"[FAIL]  {name}")
+                print(f"        Ожидали: {expected!r}")
+                print(f"        Получили: {result!r}")
+                failed += 1
+
+        except Exception as error:
+            print(f"[ERROR] {name}")
+            print(f"        {type(error).__name__}: {error}")
+            errors += 1
+
+    print()
+    print("=" * 60)
+    print("ИТОГ:")
+    print(f"Успешно: {passed}")
+    print(f"Неверный результат: {failed}")
+    print(f"Ошибки выполнения: {errors}")
+    print("=" * 60)
+
+    if passed == len(TESTS):
+        print("Все задания выполнены верно.")
+    else:
+        print("Исправьте функции выше и запустите файл снова.")
+
+
+if __name__ == "__main__":
+    run_tests()
